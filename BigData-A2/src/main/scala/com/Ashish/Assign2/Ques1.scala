@@ -13,10 +13,10 @@ object Ques1 {
       .setAppName("Ques1")
       .setMaster("local")
   val sc = new SparkContext(conf)
-  val writer = new PrintWriter(new File(args(0)+"/Output_Q1.txt"))
+  val writer = new PrintWriter(new File(args(0)+"/Output_Q1_O.txt"))
   val x=0
   val y=0
-  val input = sc.textFile(args(0)+"/LiveJournal.txt").cache();
+  val input = sc.textFile(args(0)+"/LiveJournal_O.txt").cache();
   val tabInput=input.map(line=>line.split("\\t",-1))
   val length=input.count().toInt
   for(x<-0 to length){
